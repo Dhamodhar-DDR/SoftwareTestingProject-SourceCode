@@ -8,24 +8,23 @@ public class MatrixOP{
         System.out.println("2. Subtraction");
         System.out.println("3. Scalar Multiplication");
         System.out.println("4. Matrix Multiplication");
-        System.out.println("5. Find Determinant");
-        System.out.println("6. Find Inverse");
-        System.out.println("7. Transpose");
-        System.out.println("8. Check whether given matrix is orthogonal");
-        System.out.println("9. Check whether given matrix is Idempotent");
-        System.out.println("10. Find the trace of matrix");
-        System.out.println("11. Find rank of the matrix");
-        System.out.println("12. Square of given matrix");
-        System.out.println("13. Check if symmetric");
-        System.out.println("14. Scalar Addition");
-        System.out.println("15. Scalar Subtraction");
+        System.out.println("5. Transpose");
+        System.out.println("6. Check whether given matrix is orthogonal");
+        System.out.println("7. Check whether given matrix is Idempotent");
+        System.out.println("8. Find the trace of matrix");
+        System.out.println("9. Square of given matrix");
+        System.out.println("10. Check if symmetric");
+        System.out.println("11. Scalar Addition");
+        System.out.println("12. Scalar Subtraction");
         System.out.println("Press any integer corresponding to the operation to perform the matrix operation");
+        
         Scanner sc = new Scanner(System.in);
         int inp;
         inp = sc.nextInt();
        
         switch (inp) {
-        case 1: {
+        
+            case 1: {
             System.out.println("Addition: ");
     		int row1,row2,col1,col2;
             System.out.print("Enter number of rows in 1st matrix");
@@ -44,211 +43,172 @@ public class MatrixOP{
             for(int i  =0;i<row2;i++) for(int j  =0;j<col2;j++) b[i][j] = sc.nextInt();
     		addition(row1,col1,row2,col2,a,b);
             break;
-        }
-        case 2:{
-            System.out.println("Subtraction: ");
-    		int row1,row2,col1,col2;
-            System.out.print("Enter number of rows in 1st matrix");
-    		row1 = sc.nextInt();
-    		System.out.print("Enter number of columns in 1st matrix");
-    		col1 = sc.nextInt();
-    		System.out.print("Enter number of rows in 2nd matrix");
-            row2 = sc.nextInt();
-            System.out.print("Enter number of columns in 2nd matrix");
-            col2 = sc.nextInt();
-            int a[][] = new int[row1][col1];
-            int b[][] = new int[row2][col2];
-            System.out.println("Enter elements of array 1");
-            for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
-            System.out.println("Enter elements of array 2");
-            for(int i  =0;i<row2;i++) for(int j  =0;j<col2;j++) b[i][j] = sc.nextInt();
-    		subtraction(row1,col1,row2,col2,a,b);
-            break;
-        }
-        case 3:{
-            System.out.println("Scalar Multiplication: ");
-    		int row1,col1,k;
-            System.out.print("Enter number of rows in 1st matrix");
-    		row1 = sc.nextInt();
-    		System.out.print("Enter number of columns in 1st matrix");
-    		col1 = sc.nextInt();
-    		System.out.print("Enter a scalar integer of for multiplication");
-    		k = sc.nextInt();
-    		System.out.print("Enter elements of array");
-            int a[][] = new int[row1][col1];
-            for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
-    		scalar_multiplication(row1,col1,a,k);
-            break;
-        }
-        case 4:{
-            System.out.println("Matrix Multiplication: ");
-    		int row1,row2,col1,col2;
-            System.out.print("Enter number of rows in 1st matrix");
-    		row1 = sc.nextInt();
-    		System.out.print("Enter number of columns in 1st matrix");
-    		col1 = sc.nextInt();
-    		System.out.print("Enter number of rows in 2nd matrix");
-            row2 = sc.nextInt();
-            System.out.print("Enter number of columns in 2nd matrix");
-            col2 = sc.nextInt();
-            int a[][] = new int[row1][col1];
-            int b[][] = new int[row2][col2];
-            System.out.println("Enter elements of array 1");
-            for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
-            System.out.println("Enter elements of array 2");
-            for(int i  =0;i<row2;i++) for(int j  =0;j<col2;j++) b[i][j] = sc.nextInt();
-    		matrix_multiplication(row1,col1,row2,col2,a,b);
-            break;
-        }
-        case 5:{
-            System.out.println("Determinant: ");
-    		int row1,col1;
-            System.out.print("Enter number of rows in 1st matrix");
-    		row1 = sc.nextInt();
-    		System.out.print("Enter number of columns in 1st matrix");
-    		col1 = sc.nextInt();
-    		System.out.print("Enter elements of array");
-    		double a[][] = new double[row1][col1];
-            for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextDouble();
-            System.out.println(determinantOfMatrix(row1,col1,a));
-            break;
-        }
-        case 6:{
-            System.out.println("Scalar Multiplication: ");
-    		int row1,col1;
-            System.out.print("Enter number of rows in 1st matrix");
-    		row1 = sc.nextInt();
-    		System.out.print("Enter number of columns in 1st matrix");
-    		col1 = sc.nextInt();
-    		System.out.print("Enter elements of array");
-    		double a[][] = new double[row1][col1];
-            for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextDouble();
-    		inverse(row1,col1,a);
-            break;
-        }
-        case 7:{
-            System.out.println("Transpose: ");
-    		int row1,col1;
-            System.out.print("Enter number of rows in 1st matrix");
-    		row1 = sc.nextInt();
-    		System.out.print("Enter number of columns in 1st matrix");
-    		col1 = sc.nextInt();
-    		System.out.print("Enter elements of array");
-            int a[][] = new int[row1][col1];
-            for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
-    		transpose(row1,col1,a);
-            break;
-        }
-        case 8:{
-            System.out.println("Check Orthogonal: ");
-    		int row1,col1;
-            System.out.print("Enter number of rows in 1st matrix");
-    		row1 = sc.nextInt();
-    		System.out.print("Enter number of columns in 1st matrix");
-    		col1 = sc.nextInt();
-    		System.out.print("Enter elements of array");
-            int a[][] = new int[row1][col1];
-            for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
-    		System.out.println(check_orthogonal(row1,col1,a));
-            break;
-        }
-        case 9:{
-            System.out.println("Check Idempotent: ");
-    		int row1,col1;
-            System.out.print("Enter number of rows in 1st matrix");
-    		row1 = sc.nextInt();
-    		System.out.print("Enter number of columns in 1st matrix");
-    		col1 = sc.nextInt();
-    		System.out.print("Enter elements of array");
-            int a[][] = new int[row1][col1];
-            for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
-    		System.out.println(check_idempotent(row1,col1,a));
-            break;
-        }
-        case 10:{
-        	System.out.println("Find the trace: ");
-        	int row1,col1;
-        	System.out.print("Enter number of rows in 1st matrix");
-        	row1 = sc.nextInt();
-        	System.out.print("Enter number of columns in 1st matrix");
-        	col1 = sc.nextInt();
-        	System.out.print("Enter elements of array");
-        	int a[][] = new int[row1][col1];
-        	for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
-        	System.out.println(find_trace(row1,col1,a));
-        	break;
-        }
-        case 11:{
-            System.out.println("Find the rank of the matrix: ");
-    		int row1,col1;
-            System.out.print("Enter number of rows in 1st matrix");
-    		row1 = sc.nextInt();
-    		System.out.print("Enter number of columns in 1st matrix");
-    		col1 = sc.nextInt();
-    		System.out.print("Enter elements of array");
-            int a[][] = new int[row1][col1];
-            for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
-    		System.out.println(rankOfMatrix(row1,col1,a));
-            break;
-        }
-        case 12:{
-            System.out.println("Find the square: ");
-    		int row1,col1;
-            System.out.print("Enter number of rows in 1st matrix");
-    		row1 = sc.nextInt();
-    		System.out.print("Enter number of columns in 1st matrix");
-    		col1 = sc.nextInt();
-    		System.out.print("Enter elements of array");
-            int a[][] = new int[row1][col1];
-            for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
-    		square(row1,col1,a);
-            break;
-        }
-        case 13:{
-            System.out.println("Check Symmetric: ");
-    		int row1,col1;
-            System.out.print("Enter number of rows in 1st matrix");
-    		row1 = sc.nextInt();
-    		System.out.print("Enter number of columns in 1st matrix");
-    		col1 = sc.nextInt();
-    		System.out.print("Enter elements of array");
-            int a[][] = new int[row1][col1];
-            for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
-            System.out.println(checkSymmetric(row1,col1,a));
-            break;
-        }
-        case 14:{
-            System.out.println("Scalar Addition: ");
-    		int row1,col1,k;
-            System.out.print("Enter number of rows in 1st matrix");
-    		row1 = sc.nextInt();
-    		System.out.print("Enter number of columns in 1st matrix");
-    		col1 = sc.nextInt();
-    		System.out.print("Enter a scalar integer of for addition");
-    		k = sc.nextInt();
-    		System.out.print("Enter elements of array");
-            int a[][] = new int[row1][col1];
-            for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
-    		scalar_addition(row1,col1,a,k);
-            break;
-        }
-        case 15:{
-            System.out.println("Scalar Subtraction: ");
-    		int row1,col1,k;
-            System.out.print("Enter number of rows in 1st matrix");
-    		row1 = sc.nextInt();
-    		System.out.print("Enter number of columns in 1st matrix");
-    		col1 = sc.nextInt();
-    		System.out.print("Enter a scalar integer of for subtraction");
-    		k = sc.nextInt();
-    		System.out.print("Enter elements of array");
-            int a[][] = new int[row1][col1];
-            for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
-            scalar_subtraction(row1,col1,a,k);
-            break;
-        }
-        default:
-            break;
+            }
+            case 2:{
+                System.out.println("Subtraction: ");
+                int row1,row2,col1,col2;
+                System.out.print("Enter number of rows in 1st matrix");
+                row1 = sc.nextInt();
+                System.out.print("Enter number of columns in 1st matrix");
+                col1 = sc.nextInt();
+                System.out.print("Enter number of rows in 2nd matrix");
+                row2 = sc.nextInt();
+                System.out.print("Enter number of columns in 2nd matrix");
+                col2 = sc.nextInt();
+                int a[][] = new int[row1][col1];
+                int b[][] = new int[row2][col2];
+                System.out.println("Enter elements of array 1");
+                for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
+                System.out.println("Enter elements of array 2");
+                for(int i  =0;i<row2;i++) for(int j  =0;j<col2;j++) b[i][j] = sc.nextInt();
+                subtraction(row1,col1,row2,col2,a,b);
+                break;
+            }
+            case 3:{
+                System.out.println("Scalar Multiplication: ");
+                int row1,col1,k;
+                System.out.print("Enter number of rows in 1st matrix");
+                row1 = sc.nextInt();
+                System.out.print("Enter number of columns in 1st matrix");
+                col1 = sc.nextInt();
+                System.out.print("Enter a scalar integer of for multiplication");
+                k = sc.nextInt();
+                System.out.print("Enter elements of array");
+                int a[][] = new int[row1][col1];
+                for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
+                scalar_multiplication(row1,col1,a,k);
+                break;
+            }
+            case 4:{
+                System.out.println("Matrix Multiplication: ");
+                int row1,row2,col1,col2;
+                System.out.print("Enter number of rows in 1st matrix");
+                row1 = sc.nextInt();
+                System.out.print("Enter number of columns in 1st matrix");
+                col1 = sc.nextInt();
+                System.out.print("Enter number of rows in 2nd matrix");
+                row2 = sc.nextInt();
+                System.out.print("Enter number of columns in 2nd matrix");
+                col2 = sc.nextInt();
+                int a[][] = new int[row1][col1];
+                int b[][] = new int[row2][col2];
+                System.out.println("Enter elements of array 1");
+                for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
+                System.out.println("Enter elements of array 2");
+                for(int i  =0;i<row2;i++) for(int j  =0;j<col2;j++) b[i][j] = sc.nextInt();
+                matrix_multiplication(row1,col1,row2,col2,a,b);
+                break;
+            }
+            case 5:{
+                System.out.println("Transpose: ");
+                int row1,col1;
+                System.out.print("Enter number of rows in 1st matrix");
+                row1 = sc.nextInt();
+                System.out.print("Enter number of columns in 1st matrix");
+                col1 = sc.nextInt();
+                System.out.print("Enter elements of array");
+                int a[][] = new int[row1][col1];
+                for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
+                transpose(row1,col1,a);
+                break;
+            }
+            case 6:{
+                System.out.println("Check Orthogonal: ");
+                int row1,col1;
+                System.out.print("Enter number of rows in 1st matrix");
+                row1 = sc.nextInt();
+                System.out.print("Enter number of columns in 1st matrix");
+                col1 = sc.nextInt();
+                System.out.print("Enter elements of array");
+                int a[][] = new int[row1][col1];
+                for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
+                System.out.println(check_orthogonal(row1,col1,a));
+                break;
+            }
+            case 7:{
+                System.out.println("Check Idempotent: ");
+                int row1,col1;
+                System.out.print("Enter number of rows in 1st matrix");
+                row1 = sc.nextInt();
+                System.out.print("Enter number of columns in 1st matrix");
+                col1 = sc.nextInt();
+                System.out.print("Enter elements of array");
+                int a[][] = new int[row1][col1];
+                for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
+                System.out.println(check_idempotent(row1,col1,a));
+                break;
+            }
+            case 8:{
+                System.out.println("Find the trace: ");
+                int row1,col1;
+                System.out.print("Enter number of rows in 1st matrix");
+                row1 = sc.nextInt();
+                System.out.print("Enter number of columns in 1st matrix");
+                col1 = sc.nextInt();
+                System.out.print("Enter elements of array");
+                int a[][] = new int[row1][col1];
+                for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
+                System.out.println(find_trace(row1,col1,a));
+                break;
+            }
+            case 9:{
+                System.out.println("Find the square: ");
+                int row1,col1;
+                System.out.print("Enter number of rows in 1st matrix");
+                row1 = sc.nextInt();
+                System.out.print("Enter number of columns in 1st matrix");
+                col1 = sc.nextInt();
+                System.out.print("Enter elements of array");
+                int a[][] = new int[row1][col1];
+                for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
+                square(row1,col1,a);
+                break;
+            }
+            case 10:{
+                System.out.println("Check Symmetric: ");
+                int row1,col1;
+                System.out.print("Enter number of rows in 1st matrix");
+                row1 = sc.nextInt();
+                System.out.print("Enter number of columns in 1st matrix");
+                col1 = sc.nextInt();
+                System.out.print("Enter elements of array");
+                int a[][] = new int[row1][col1];
+                for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
+                System.out.println(checkSymmetric(row1,col1,a));
+                break;
+            }
+            case 11:{
+                System.out.println("Scalar Addition: ");
+                int row1,col1,k;
+                System.out.print("Enter number of rows in 1st matrix");
+                row1 = sc.nextInt();
+                System.out.print("Enter number of columns in 1st matrix");
+                col1 = sc.nextInt();
+                System.out.print("Enter a scalar integer of for addition");
+                k = sc.nextInt();
+                System.out.print("Enter elements of array");
+                int a[][] = new int[row1][col1];
+                for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
+                scalar_addition(row1,col1,a,k);
+                break;
+            }
+            case 12:{
+                System.out.println("Scalar Subtraction: ");
+                int row1,col1,k;
+                System.out.print("Enter number of rows in 1st matrix");
+                row1 = sc.nextInt();
+                System.out.print("Enter number of columns in 1st matrix");
+                col1 = sc.nextInt();
+                System.out.print("Enter a scalar integer of for subtraction");
+                k = sc.nextInt();
+                System.out.print("Enter elements of array");
+                int a[][] = new int[row1][col1];
+                for(int i  =0;i<row1;i++) for(int j  =0;j<col1;j++) a[i][j] = sc.nextInt();
+                scalar_subtraction(row1,col1,a,k);
+                break;
+            }
+            default:
+                break;
         }
     }
    
@@ -259,26 +219,31 @@ public class MatrixOP{
         if(col1 < 0)
         {
             System.out.println("Invalid Number of columns");        
+
             return null;
         }
         else if(col2 < 0)
         {
             System.out.println("Invalid Number of columns");
+
             return null;
         }
         else if(row1 < 0)
         {
             System.out.println("Invalid Number of rows");
+            
             return null;
         }
         else if(row2 < 0)
         {
             System.out.println("Invalid Number of rows");
+            
             return null;
         }
         else if(row1 != row2) 
         {
             System.out.println("Number of rows in each matrix must be of same");
+            
             return null;
         }
         else if(col1 != col2)
@@ -377,6 +342,7 @@ public class MatrixOP{
             {
                 System.out.print(b[i][j] + " ");
             }
+            
             System.out.println();
         }
         return b;
@@ -425,6 +391,7 @@ public class MatrixOP{
             {
                 System.out.print(b[i][j] + " ");
             }
+            
             System.out.println();
         }
         return b;
@@ -626,14 +593,15 @@ public class MatrixOP{
             int itmp = index[j];
             index[j] = index[k];
             index[k] = itmp;
+
             for (int i=j+1; i<n; ++i) 	
             {
                 double pj = a[index[i]][j]/a[index[j]][j];
 
-            // Record pivoting ratios below the diagonal
+                // Record pivoting ratios below the diagonal
                 a[index[i]][j] = pj;
 
-            // Modify other elements accordingly
+                // Modify other elements accordingly
                 for (int l=j+1; l<n; ++l)
                 {
                     a[index[i]][l] -= pj*a[index[j]][l];
@@ -657,13 +625,16 @@ public class MatrixOP{
         for (int i=0; i<n; ++i) 
         {
             x[n-1][i] = b[index[n-1]][i]/a[index[n-1]][n-1];
+            
             for (int j=n-2; j>=0; --j) 
             {
                 x[j][i] = b[index[j]][i];
+                
                 for (int l=j+1; l<n; ++l) 
                 {
                     x[j][i] -= a[index[j]][l]*x[l][i];
                 }
+                
                 x[j][i] /= a[index[j]][j];
             }
         }
@@ -700,6 +671,7 @@ public class MatrixOP{
             {
                 System.out.print(at[i][j] + " ");
             }
+
             System.out.println();
         }
         
@@ -755,7 +727,8 @@ public class MatrixOP{
             }
             int flag = 1;
             col1 = row1;
-//            //Display
+            
+            //Display
             for (int i = 0; i < row1; i++) 
             {
                 for (int j = 0; j < col1; j++) 
@@ -770,7 +743,7 @@ public class MatrixOP{
             System.out.println("Given matrix is orthogonal");
             return flag;
         }
-        //Store transpose of matrix in at
+        
     }
     
 	public static int check_idempotent(int row1,int col1,int a[][])
@@ -1016,7 +989,6 @@ public class MatrixOP{
         	{
             	return 0; 
         	}
-            
         }
         // If it isn't a square matrix
         // then it can't be a symmetric matrix
@@ -1024,7 +996,6 @@ public class MatrixOP{
         {
         // Display message
             System.out.print("\nThe matrix is not symmetric");
-
             return 0;
         }
     }
